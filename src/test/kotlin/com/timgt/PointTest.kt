@@ -1,5 +1,7 @@
-package com.example
+package com.timgt
 
+import com.timgt.battleship.Point
+import com.timgt.battleship.toIndex
 import org.junit.Assert
 import org.junit.Test
 

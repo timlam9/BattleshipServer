@@ -1,1 +1,1 @@
-rootProject.name = "com.example.battleship"
+rootProject.name = "com.timgt.battleship"

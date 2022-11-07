@@ -1,4 +1,4 @@
-package com.example
+package com.timgt.battleship
 
 enum class Ship(val size: Int) {
     Destroyer(2),

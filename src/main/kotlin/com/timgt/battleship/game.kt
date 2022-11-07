@@ -1,4 +1,4 @@
-package com.example
+package com.timgt.battleship
 
 fun Board.addShip(ship: Ship, anchor: Point, direction: Direction): Board {
     val anchorIndex = anchor.toIndex(10)

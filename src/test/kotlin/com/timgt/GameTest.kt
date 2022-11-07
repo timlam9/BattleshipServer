@@ -1,7 +1,8 @@
-package com.example
+package com.timgt
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import com.timgt.battleship.*
 
 class GameTest {
 

@@ -1,4 +1,4 @@
-package com.example
+package com.timgt.battleship
 
 data class Point(
     val row: Char,

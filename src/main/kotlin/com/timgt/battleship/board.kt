@@ -1,4 +1,4 @@
-package com.example
+package com.timgt.battleship
 
 typealias Board = List<Cell>
 

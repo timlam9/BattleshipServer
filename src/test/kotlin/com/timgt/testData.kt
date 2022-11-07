@@ -1,5 +1,6 @@
-package com.example
+package com.timgt
 
+import com.timgt.battleship.*
 
 val emptyBoard = listOf(
     Cell(),
