@@ -350,6 +350,45 @@ val successHitBoard = listOf(
     Cell(), Cell(Ship.Carrier), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
 )
 
+val successSunkenShipBoard = listOf(
+    Cell(Ship.Destroyer, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(Ship.Destroyer, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(Ship.Submarine),
+    Cell(), Cell(), Cell(), Cell(), Cell(Ship.Battleship), Cell(Ship.Battleship), Cell(Ship.Battleship), Cell(Ship.Battleship), Cell(), Cell(Ship.Submarine),
+    Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(Ship.Submarine),
+    Cell(), Cell(Ship.Carrier), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier), Cell(Ship.Cruiser), Cell(Ship.Cruiser), Cell(Ship.Cruiser), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+)
+
+val playerOneWonBoard = listOf(
+    Cell(Ship.Destroyer, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(Ship.Destroyer, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(Ship.Submarine, isHit = true),
+    Cell(), Cell(), Cell(), Cell(), Cell(Ship.Battleship, isHit = true), Cell(Ship.Battleship, isHit = true), Cell(Ship.Battleship, isHit = true), Cell(Ship.Battleship, isHit = true), Cell(), Cell(Ship.Submarine, isHit = true),
+    Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(Ship.Submarine, isHit = true),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(Ship.Cruiser, isHit = true), Cell(Ship.Cruiser, isHit = true), Cell(Ship.Cruiser, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+)
+
+val playerTwoLostBoard = listOf(
+    Cell(Ship.Destroyer, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(Ship.Destroyer, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(Ship.Submarine, isHit = true),
+    Cell(), Cell(), Cell(), Cell(), Cell(Ship.Battleship, isHit = true), Cell(Ship.Battleship, isHit = true), Cell(Ship.Battleship, isHit = true), Cell(Ship.Battleship, isHit = true), Cell(), Cell(Ship.Submarine, isHit = true),
+    Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(Ship.Submarine, isHit = true),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(Ship.Cruiser, isHit = true), Cell(Ship.Cruiser, isHit = true), Cell(Ship.Cruiser, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier, isHit = true), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+    Cell(), Cell(Ship.Carrier), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(), Cell(),
+)
+
 fun setupBoard() = generateBoard()
     .addShip(Ship.Destroyer, Point('A', 1), Direction.Vertical)
     .addShip(Ship.Submarine, Point('C', 10), Direction.Vertical)
@@ -359,7 +398,4 @@ fun setupBoard() = generateBoard()
 
 // TODO
 // 1. Notify for a sunken ship
-// 2. Players + Players' boards
-// 3. Turns
-// 4. Notify Game state (sunken ships, game over)
-// 5. Generate game report
+// 2. Generate game report

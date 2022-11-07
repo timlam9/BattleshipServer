@@ -29,4 +29,12 @@ fun Board.fire(point: Point): Board {
     }
 }
 
-fun  Board.hasShips(): Boolean = any { it.ship != null }
+fun Board.hasShips(): Boolean = any { it.ship != null }
+
+fun Board.isWon(): Boolean = filter { cell ->
+        cell.ship != null
+    }.all { cell ->
+        cell.isHit
+    }
+
+

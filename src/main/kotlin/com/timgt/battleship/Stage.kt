@@ -1,6 +1,7 @@
 package com.timgt.battleship
 
-enum class Stage {
-    Setup,
-    Playing
+sealed class Stage {
+    object Setup: Stage()
+    data class Playing(val player: Player): Stage()
+    data class GameOver(val player: Player): Stage()
 }

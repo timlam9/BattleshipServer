@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import com.timgt.battleship.*
 
-class GameTest {
+class BoardTest {
 
     @Test
     fun `generate board`() {

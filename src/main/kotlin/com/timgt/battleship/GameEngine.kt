@@ -4,7 +4,7 @@ class GameEngine {
     private lateinit var gameState: GameState
 
     fun start(playerOne: Player, playerTwo: Player): GameState {
-        gameState = GameState(playerOne= playerOne, playerTwo = playerTwo)
+        gameState = GameState(playerOne = playerOne, playerTwo = playerTwo)
         return gameState
     }
 
@@ -22,9 +22,35 @@ class GameEngine {
             gameState.copy(playerTwoBoard = board)
 
         if (gameState.playerOneBoard.hasShips() && gameState.playerTwoBoard.hasShips()) {
-            gameState = gameState.copy(stage = Stage.Playing)
+            gameState = gameState.copy(stage = Stage.Playing(gameState.playerOne))
         }
 
         return gameState
     }
+
+    fun fire(point: Point): GameState {
+        val stage = gameState.stage
+        if (stage !is Stage.Playing) error("Cannot fire at this stage: $stage")
+
+        gameState = when (stage.player) {
+            gameState.playerOne -> {
+                val board = gameState.playerTwoBoard.fire(point)
+                gameState.copy(
+                    playerTwoBoard = board,
+                    stage = if (board.isWon()) Stage.GameOver(gameState.playerOne) else Stage.Playing(gameState.playerTwo)
+                )
+            }
+            else -> {
+                val board = gameState.playerOneBoard.fire(point)
+                gameState.copy(
+                    playerOneBoard = board,
+                    stage = if (board.isWon()) Stage.GameOver(gameState.playerTwo) else Stage.Playing(gameState.playerOne)
+                )
+            }
+        }
+
+
+        return gameState
+    }
+
 }
