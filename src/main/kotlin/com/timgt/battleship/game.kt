@@ -28,3 +28,5 @@ fun Board.fire(point: Point): Board {
         } else cell
     }
 }
+
+fun  Board.hasShips(): Boolean = any { it.ship != null }
